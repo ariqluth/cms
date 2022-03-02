@@ -82,3 +82,36 @@ Route::get('/program', function () {
 //     input dari url 
 //     ";
 // });
+
+
+// tugas 3 pertemuan 3 view 
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::prefix('/')->group(function () {
+
+       
+Route::get('/slider', function () {
+    return view('slider');
+});
+
+Route::get('/map', function () {
+    return view('map');
+});
+
+Route::get('/menu', function () {
+    return view('menu');
+});
+
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
+
+});
