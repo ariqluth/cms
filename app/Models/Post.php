@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 class Posts extends Model
 {
     protected $table = 'posts';
-    protected $fillable = ['title', 'judul', 'isian', 'image'];
+    protected $fillable = ['title', 'judul', 'isian'];
     public $timestamps = false;
 }
+
+
         
 
 

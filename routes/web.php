@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\Post;
-use App\Models\Posts;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-
 
 
 
@@ -95,16 +93,13 @@ Route::get('/program', function () {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+// pertemuan 4 
 
 Route::prefix('/')->group(function () {
 
        
-Route::get('/slider', function () {
-    return view('slider', [
-        "title" => "King Of Pasta",
-        "posts" => Posts::all()
-    ]);
-});
+Route::get('/slider', [PageController:: class, 'tampilpasta']);
+
 
 
 Route::get('/map', function () {

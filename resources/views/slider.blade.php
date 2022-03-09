@@ -20,9 +20,14 @@
       		    <ul class="slides">
           	 	 <li class="slide">
                     <div class="item">
-                          <img src="{{ asset ('images2/thumb1.png')}}" width="226" height="225" alt="sliderimg" class="wow flipInX"
-                           data-wow-delay=".8s"> 
-                          <h3>Pasta Capellini</h3>
+                          <img src= "{{ asset ('images2/pasta[gambar]')}}" width="226" height="225" alt="sliderimg" class="wow flipInX"
+                           data-wow-delay=".8s">
+                          
+                           {{-- perulangan buat manggil databases --}}
+                           @foreach($pasta as $pa) 
+                          <h3>{{$pa->title}}</h3>
+                          @endforeach
+
                       </div> <!-- end of item-->
                       
                    <div class="item2">

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -25,6 +26,12 @@ class PageController extends Controller
         return ("Ini adalah halaman
         Artikel dengan ID: ".$id." ganti id sesuai dengan
         input dari url ");
+    }
+
+    // manggil database dengan Controller ,view , Route
+    public function tampilpasta() {
+        $pasta = DB::table('posts')->get();
+        return view('slider', ['pasta' => $pasta]);
     }
 
    
