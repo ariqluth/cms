@@ -7,6 +7,9 @@
     
     
     </div> <!-- end of map id-->
+    @foreach($pasta as $p)
+        <h2 hidden>{{$p->id}}</h2>
+    @endforeach
 
 </div>    <!-- end of map wrapper-->
 

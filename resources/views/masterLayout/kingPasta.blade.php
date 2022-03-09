@@ -42,7 +42,7 @@ new WOW().init();
 		<div class="logo"> <a href="#"><img src="{{ asset ('images2/LOGO.png')}}" alt="logo" width="165" height="74"></a> </div> <!--end of Logo-->
         <nav>
             <ul id="navigations">
-                <li><a href="#navigations">HOME</a></li>
+                <li><a href="home">HOME</a></li>
                 <li> <a href="slider">ABOUT</a></li>
                 <li><a href="map">LOCATONS</a></li>
                 <li><a href="menu">MENU</a></li>

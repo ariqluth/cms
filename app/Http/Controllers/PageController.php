@@ -39,4 +39,18 @@ class PageController extends Controller
         return view('masterLayout.kingPasta', ['pasta' => $pasta]);
     }
 
+    public function tampilpastaMap() {
+        $pasta = DB::table('posts')->get();
+        return view('map', ['pasta' => $pasta]);
+    }
+
+    public function tampilpastaMenu() {
+        $pasta = DB::table('posts')->get();
+        return view('menu', ['pasta' => $pasta]);
+    }
+
+    public function tampilpastaContact() {
+        $pasta = DB::table('posts')->get();
+        return view('contact', ['pasta' => $pasta]);
+    }
 }

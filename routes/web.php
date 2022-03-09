@@ -100,21 +100,15 @@ Route::prefix('/')->group(function () {
        
 Route::get('/slider', [PageController:: class, 'tampilpasta']);
 
-Route::get('/slider', [PageController:: class, 'tampilpastaHome']);
+Route::get('/home', [PageController:: class, 'tampilpastaHome']);
 
 
-Route::get('/map', function () {
-    return view('map');
-});
+Route::get('/map',  [PageController:: class, 'tampilpastaMap']);
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+Route::get('/menu',  [PageController:: class, 'tampilpastaMenu']);
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact',  [PageController:: class, 'tampilpastaContact']);
 
 
 

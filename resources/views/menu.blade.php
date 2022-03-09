@@ -3,6 +3,11 @@
 <div class="bookonlinewrapper">
     <div class="container" id="bookonline">
     <h3 class="wow fadeInUp" data-wow-delay="0.3s"> BOOK ONLINE</h3>
+
+    @foreach($pasta as $p)
+    <h2 hidden>{{$p->id}}</h2>
+@endforeach
+
     <form >
     <input type="text" class="name wow zoomIn" placeholder="Your Name" >
     <input type="text" class="email wow zoomIn" placeholder="Your E-MAIL">
