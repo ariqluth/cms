@@ -34,5 +34,9 @@ class PageController extends Controller
         return view('slider', ['pasta' => $pasta]);
     }
 
-   
+    public function tampilpastaHome() {
+        $pasta = DB::table('posts')->get();
+        return view('masterLayout.kingPasta', ['pasta' => $pasta]);
+    }
+
 }

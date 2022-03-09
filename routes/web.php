@@ -100,6 +100,7 @@ Route::prefix('/')->group(function () {
        
 Route::get('/slider', [PageController:: class, 'tampilpasta']);
 
+Route::get('/slider', [PageController:: class, 'tampilpastaHome']);
 
 
 Route::get('/map', function () {

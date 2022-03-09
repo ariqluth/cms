@@ -26,9 +26,9 @@
                         <img src="{{ asset ('images2/'.$pa->gambar)}}" width="226" height="225" alt="sliderimg" class="wow flipInX"
                         data-wow-delay=".8s"> 
                           <h3>{{$pa->title}}</h3>
-                        
+                          
                       </div> <!-- end of item-->
-                  
+                      
                    <div class="item2">
                           <img src="{{ asset ('images2/'.$pa->gambar)}}" width="226" height="225" alt="sliderimg" class="wow flipInX"
                            data-wow-delay=".8s"> 
@@ -39,6 +39,7 @@
                           <img src="{{ asset ('images2/'.$pa->gambar)}}" width="226" height="225" alt="sliderimg" class="wow flipInX"
                            data-wow-delay=".8s"> 
                            <h3>{{$pa->title}}</h3>
+                       
                       </div> <!-- end of item-->
                       @endforeach
                   </li>
