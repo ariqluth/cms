@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title', 100)->index();
             $table->text('isian');
+            $table->string('gambar');
         });
     }
 
