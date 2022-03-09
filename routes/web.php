@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use App\Models\Post;
+use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
+
+
+
 
 
 /*
@@ -96,8 +100,12 @@ Route::prefix('/')->group(function () {
 
        
 Route::get('/slider', function () {
-    return view('slider');
+    return view('slider', [
+        "title" => "King Of Pasta",
+        "posts" => Posts::all()
+    ]);
 });
+
 
 Route::get('/map', function () {
     return view('map');
@@ -114,4 +122,7 @@ Route::get('/contact', function () {
 
 
 
+
+
 });
+
