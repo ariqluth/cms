@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+{{-- update --}}
+  <script src="{{ asset('js/app.js') }}" defer></script>
 
+  
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <script src="{{ asset ('js2/jquery.js') }}"></script> 
 	<script src="{{ asset ('js2/jquery.glide.js') }}"></script>
@@ -54,13 +57,13 @@ new WOW().init();
                   <!-- Authentication Links -->
                   @guest
                   @if (Route::has('login'))
-                      <li>
+                      <li class="nav-item">
                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                       </li>
                   @endif
 
                   @if (Route::has('register'))
-                      <li>
+                      <li class="nav-item">
                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                       </li>
                   @endif
@@ -115,9 +118,12 @@ new WOW().init();
 
 @yield('login')
 
-<!--============ Contact us ============-->
+<!--============ Register ============-->
 
 @yield('daftar')
+<!--============ Reset ============-->
+
+@yield('reset')
 
 <!--============ FOOTER ============-->
 

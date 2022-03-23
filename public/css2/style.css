@@ -140,6 +140,16 @@ float:left; margin-left:45px;}
 	float: left;
 	clear: none;
 }
+/* update */
+.card > .card-header + .list-group,
+.card > .list-group + .card-footer {
+  border-top: 0;
+}
+
+
+
+
+
 
 
 .sliderwrapper .slider-arrows {}
