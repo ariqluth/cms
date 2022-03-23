@@ -13,7 +13,7 @@
 {{-- update --}}
   <script src="{{ asset('js/app.js') }}" defer></script>
 
-  
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <script src="{{ asset ('js2/jquery.js') }}"></script> 
 	<script src="{{ asset ('js2/jquery.glide.js') }}"></script>
@@ -94,6 +94,8 @@ new WOW().init();
         
       </div> <!--end of header-->
 </div> <!-- end of headerwrapper-->
+<br>
+<br>
 @yield('utama')
 
 @yield('slider')
