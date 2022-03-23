@@ -129,3 +129,7 @@ Route::get('/login', [LoginController:: class, 'tampillogin']);
 // route pada login dan daftar 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
