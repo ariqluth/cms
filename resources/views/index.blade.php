@@ -103,6 +103,8 @@
     <!-- ======= Resume Section ======= -->
     @yield('news')
 
+    @yield('login')
+
    <!-- ======= Portfolio Section ======= -->
 
     @yield('portfolio')

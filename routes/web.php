@@ -99,7 +99,7 @@ Route::get('/program', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // pertemuan 4 
@@ -120,13 +120,15 @@ Route::get('/menu',  [PageController:: class, 'tampilpastaMenu']);
 Route::get('/contact',  [PageController:: class, 'tampilpastaContact']);
 
 
-Route::get('/login', [LoginController:: class, 'tampillogin']);
+// Route::get('/login', [LoginController:: class, 'tampillogin']);
 
 
 });
 
 //pertemuan 5 
 // route pada login dan daftar 
+
+
 
 
 

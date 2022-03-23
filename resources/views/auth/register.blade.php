@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('masterLayout.kingPasta')
 
-@section('content')
+@section('daftar')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +74,7 @@
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
 @endsection

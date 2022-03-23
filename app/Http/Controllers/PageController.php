@@ -36,7 +36,7 @@ class PageController extends Controller
 
     public function tampilpastaHome() {
         $pasta = DB::table('posts')->get();
-        return view('masterLayout.kingPasta', ['pasta' => $pasta]);
+        return view('utama', ['pasta' => $pasta]);
     }
 
     public function tampilpastaMap() {

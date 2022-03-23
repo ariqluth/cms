@@ -6,7 +6,11 @@
 <html lang="en">
 <head>
 	<title>King Of Pasta</title>
-    
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <script src="{{ asset ('js2/jquery.js') }}"></script> 
 	<script src="{{ asset ('js2/jquery.glide.js') }}"></script>
@@ -46,53 +50,48 @@ new WOW().init();
                 <li> <a href="slider">ABOUT</a></li>
                 <li><a href="map">LOCATONS</a></li>
                 <li><a href="menu">MENU</a></li>
-                <li><a href="contact">CONTACT</a></li>
-                <li><a href="login">LOGIN DAN REGISTER</a></li>
+                
+                  <!-- Authentication Links -->
+                  @guest
+                  @if (Route::has('login'))
+                      <li>
+                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                      </li>
+                  @endif
+
+                  @if (Route::has('register'))
+                      <li>
+                          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                      </li>
+                  @endif
+              @else
+                  <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                          {{ Auth::user()->name }}
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
+                          </form>
+                      </div>
+                  </li>
+              @endguest
             </ul>
-    
+
+
         </nav>
+
+        
       </div> <!--end of header-->
 </div> <!-- end of headerwrapper-->
-<div class="sliderwrapper">
-    <div id="slider" class="container">
-         <div class="slider">
-                <ul class="slides">
-                      <li class="slide">
-                        <h5 class="wow fadeInDown" data-wow-delay="0.8s">What is Pasta ? </h5>
-                        
-                        {{-- pada home berubah ambil database --}}
-                        @foreach($pasta as $p)
-                        <p class="wow fadeInUp" data-wow-delay="0.8s">{{$p->isian}}</p>
-                    <img src="{{ asset ('images2/'.$p->gambar) }}" width="317" height="256" class="wow fadeInRight" 
-                    data-wow-delay="0.8s" alt="slide1img"> 
-                    @endforeach
-
-
-                    </li>
-                       <li class="slide">
-                        <h5 class="wow fadeInDown" data-wow-delay="0.8s">What is Pasta ? </h5>
-                        <p class="wow fadeInUp" data-wow-delay="0.8s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                       the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                         also the leap into 
-                       electronic typesetting</p>
-                    <img src="{{ asset ('images2/slideimg.png') }}" width="317" height="256" class="wow fadeInRight" 
-                    data-wow-delay="0.8s" alt="slideimg2"> 
-                    </li>
-                      <li class="slide">
-                        <h5 class="wow fadeInDown" data-wow-delay="0.8s">What is Pasta ? </h5>
-                        <p class="wow fadeInUp" data-wow-delay="0.8s">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                       the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                         also the leap into 
-                       electronic typesetting</p>
-                    <img src="{{ asset ('images2/slideimg.png') }}" width="317" height="256" class="wow fadeInRight" 
-                    data-wow-delay="0.8s" alt="slideimg2"> 
-                    </li>
-                </ul>
-          </div>
-    </div> <!-- End of Slider-->
-</div> <!-- end of sliderwrapper-->
+@yield('utama')
 
 @yield('slider')
 
@@ -114,7 +113,7 @@ new WOW().init();
 
 <!--============ Login ============-->
 
-
+@yield('login')
 
 <!--============ Contact us ============-->
 

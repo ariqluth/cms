@@ -1,18 +1,16 @@
 @extends('masterLayout.kingPasta')
+{{-- backup login default --}}
 
 @section('login')
 <section id="portfolio" class="portfolio section-bg">
     <div class="container" data-aos="fade-up">
-        @csrf
 
-        
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
-                        {{-- update --}}
                         @csrf
 
                         <div class="row mb-3">
@@ -28,9 +26,7 @@
                                 @enderror
                             </div>
                         </div>
-                        {{-- update batas  --}}
 
-                        
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
@@ -75,9 +71,5 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
 </section>
 @endsection
