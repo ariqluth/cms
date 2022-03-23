@@ -47,7 +47,9 @@ new WOW().init();
                 <li><a href="map">LOCATONS</a></li>
                 <li><a href="menu">MENU</a></li>
                 <li><a href="contact">CONTACT</a></li>
+                <li><a href="login">LOGIN DAN REGISTER</a></li>
             </ul>
+    
         </nav>
       </div> <!--end of header-->
 </div> <!-- end of headerwrapper-->
@@ -110,14 +112,13 @@ new WOW().init();
 
 
 
-<!--============ MAP ============-->
-
+<!--============ Login ============-->
 
 
 
 <!--============ Contact us ============-->
 
-
+@yield('daftar')
 
 <!--============ FOOTER ============-->
 

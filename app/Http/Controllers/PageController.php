@@ -53,4 +53,5 @@ class PageController extends Controller
         $pasta = DB::table('posts')->get();
         return view('contact', ['pasta' => $pasta]);
     }
+  
 }

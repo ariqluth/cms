@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\LoginController;
 
 
 
@@ -16,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// default 
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //  Praktikum 3
 Route::prefix('/')->group(function () {
@@ -88,9 +97,9 @@ Route::get('/program', function () {
 
 // tugas 3 pertemuan 3 view 
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // pertemuan 4 
@@ -111,8 +120,12 @@ Route::get('/menu',  [PageController:: class, 'tampilpastaMenu']);
 Route::get('/contact',  [PageController:: class, 'tampilpastaContact']);
 
 
-
+Route::get('/login', [LoginController:: class, 'tampillogin']);
 
 
 });
+
+//pertemuan 5 
+// route pada login dan daftar 
+
 
