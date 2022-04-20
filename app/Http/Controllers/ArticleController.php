@@ -96,7 +96,21 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+        $article = Article::find($id);
+
+        $article->title = $request->title;
+        $article->content = $request->content;
+   
+        if ($article->freatured_image && file_exists(storage_path('app/public' . $article->freatured_image))) {
+            Storage::delete('public/' . $article-> freatured_image);
+        }
+        $image_name = $request->file('image')->store('image' , 'public');
+        $article->freatured_image = $image_name;
+
+        $article-> save();
+        return redirect()-> route('articles.index')
+            ->with('success', 'Articles successfully Diupdate');
+
 
     }
 
