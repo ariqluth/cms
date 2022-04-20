@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ArticleController;
 
 
 
@@ -128,6 +129,13 @@ Route::get('/contact',  [PageController:: class, 'tampilpastaContact']);
 //pertemuan 5 
 // route pada login dan daftar 
 
+// pertemuan 9 buat articles 
+
+// article eloquent
+Route::resource('articles', ArticleController::class);
+
+// print pdf 
+Route::get('/articles/cetak_pdf', [ArticleController::class, 'cetak_pdf'])->name('cetak_pdf');
 
 
 
