@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
+
+
 use App\Models\Article;
-
-
-
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -124,6 +124,17 @@ class ArticleController extends Controller
     {
         //
     }
+    public function print_pdf()
+    {
+        $articles = Article::all();
+        $pdf = PDF::loadview('articles.articles_pdf', ['articles' => $articles]);
+        return $pdf->stream();
+    }
 
-  
+    public function test()
+    {
+        $articles = Article::all();
+        return view('articles.index', ['articles' => $articles]);
+    }
+ 
 }

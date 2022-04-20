@@ -7,7 +7,7 @@
         @endif
     <div class="float-left mb-4 ">
         <a class="btn btn-success" href="{{ route('articles.create') }}"> Create a new article</a>
-        <a class="btn btn-warning" href="{{ route('cetak_pdf') }}"> Compress PDF</a>
+        <a class="btn btn-warning" href="{{ route('articles.print_pdf') }}"> Compress PDF</a>
     </div>
         <table class="table table-bordered" style="width:95%;margin: 0
         auto;">

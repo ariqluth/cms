@@ -10,6 +10,7 @@ use App\Http\Controllers\ArticleController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -129,13 +130,13 @@ Route::get('/contact',  [PageController:: class, 'tampilpastaContact']);
 //pertemuan 5 
 // route pada login dan daftar 
 
-// pertemuan 9 buat articles 
+// pertemuan 10 buat articles 
 
 // article eloquent
 Route::resource('articles', ArticleController::class);
 
 // print pdf 
-Route::get('/articles/cetak_pdf', [ArticleController::class, 'cetak_pdf'])->name('cetak_pdf');
+Route::get('/article/print_pdf', [ArticleController::class, 'print_pdf'])->name('articles.print_pdf');
 
 
 
